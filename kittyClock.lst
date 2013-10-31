@@ -1,0 +1,2744 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/12/11 09:53:19
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+				;numbers-----------------------------------------
+ 0000 2A 2A 2A 2A 2A 2A		zero	db	'********'
+       2A 2A
+ 0008  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0010  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0018  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0020  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0028  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0030  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+
+ 0038 20 20 20 20 20 20		one		db	'       *'
+       20 2A
+ 0040  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0048  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0050  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0058  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0060  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0068  20 20 20 20 20 20			db	'       *'
+       20 2A
+
+ 0070 2A 2A 2A 2A 2A 2A		two		db	'********'
+       2A 2A
+ 0078  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0080  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0088  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+ 0090  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 0098  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 00A0  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+						
+ 00A8 2A 2A 2A 2A 2A 2A		three	db	'********' 
+       2A 2A
+ 00B0  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 00B8  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 00C0  2A 2A 2A 2A 2A 2A			db	'********' 
+       2A 2A
+ 00C8  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 00D0  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 00D8  2A 2A 2A 2A 2A 2A			db	'********' 
+       2A 2A
+						
+ 00E0 2A 20 20 20 20 20		four	db	'*      *' 
+       20 2A
+ 00E8  2A 20 20 20 20 20			db	'*      *' 
+       20 2A
+ 00F0  2A 20 20 20 20 20			db	'*      *' 
+       20 2A
+ 00F8  2A 2A 2A 2A 2A 2A			db	'********' 
+       2A 2A
+ 0100  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 0108  20 20 20 20 20 20			db	'       *' 
+       20 2A
+ 0110  20 20 20 20 20 20			db	'       *' 
+       20 2A
+						
+ 0118 2A 2A 2A 2A 2A 2A		five	db	'********'
+       2A 2A
+ 0120  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 0128  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 0130  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+ 0138  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0140  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0148  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+						
+ 0150 2A 2A 2A 2A 2A 2A		six		db	'********'
+       2A 2A
+ 0158  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 0160  2A 20 20 20 20 20			db	'*       '
+       20 20
+ 0168  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+ 0170  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0178  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0180  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+						
+ 0188 2A 2A 2A 2A 2A 2A		seven	db	'********'
+       2A 2A
+ 0190  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0198  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 01A0  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 01A8  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 01B0  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 01B8  20 20 20 20 20 20			db	'       *'
+       20 2A
+						
+ 01C0 2A 2A 2A 2A 2A 2A		eight	db	'********'
+       2A 2A
+ 01C8  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 01D0  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 01D8  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+ 01E0  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 01E8  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 01F0  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+						
+ 01F8 2A 2A 2A 2A 2A 2A		nine	db	'********'
+       2A 2A
+ 0200  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0208  2A 20 20 20 20 20			db	'*      *'
+       20 2A
+ 0210  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+ 0218  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0220  20 20 20 20 20 20			db	'       *'
+       20 2A
+ 0228  2A 2A 2A 2A 2A 2A			db	'********'
+       2A 2A
+
+ 0230 20 20 20 20 20 20		dots	db  '        '
+       20 20
+ 0238  20 20 20 20 20 20			db  '        '
+       20 20
+ 0240  20 20 20 2A 2A 20			db  '   **   '
+       20 20
+ 0248  20 20 20 20 20 20			db  '        '
+       20 20
+ 0250  20 20 20 2A 2A 20			db  '   **   '
+       20 20
+ 0258  20 20 20 20 20 20			db  '        '
+       20 20
+ 0260  20 20 20 20 20 20			db  '        '
+       20 20
+				;main_clock--------------------------------------
+ 0268 50 72 65 73 73 20		string1	db	'Press any key to function manu.$'
+       61 6E 79 20 6B 65
+       79 20 74 6F 20 66
+       75 6E 63 74 69 6F
+       6E 20 6D 61 6E 75
+       2E 24
+ 0288 2A			string_column	db  42
+ 0289 13			string_row		db  19
+ 028A 02			column 	db 	2
+ 028B 08			row 	db 	8
+ = 0008				len_line equ 8
+ = 001F				len_string equ	31
+ 028C 00			temp 	db 	0
+ 028D 08			eightconst   db  8
+
+				;calendar----------------------------------------
+ 028E 0000			year	dw	?
+ 0290 00			month	db	?
+ 0291 00			day		db	?
+ 0292 00			weekday db  ?
+ 0293 3C			c_column db  60
+ 0294 11			c_row	 db	 17
+
+ 0295 4D 6F 6E 64 61 79		day1	db 'Monday$'
+       24
+ 029C 54 75 65 73 64 61		day2	db 'Tuesday$'
+       79 24
+ 02A4 57 65 64 6E 65 73		day3	db 'Wednesday$'
+       64 61 79 24
+ 02AE 54 68 75 72 73 64		day4	db 'Thursday$'
+       61 79 24
+ 02B7 46 72 69 64 61 79		day5    db 'Friday$'
+       24
+ 02BE 53 61 74 75 72 64		day6    db 'Saturday$'
+       61 79 24
+ 02C7 53 75 6E 64 61 79		day0    db 'Sunday$'
+       24
+
+				;function_manu-----------------------------------
+ 02CE 20 20 20 20 20 20		HelloKitty   db   '       *            *          '
+       20 2A 20 20 20 20
+       20 20 20 20 20 20
+       20 20 2A 20 20 20
+       20 20 20 20 20 20
+       20
+ 02ED  20 20 20 20 20 20				 db	  '      * **        _* *_        '
+       2A 20 2A 2A 20 20
+       20 20 20 20 20 20
+       5F 2A 20 2A 5F 20
+       20 20 20 20 20 20
+       20
+ 030C  20 20 20 20 20 2A				 db   '     *    *******{_(@) }       '
+       20 20 20 20 2A 2A
+       2A 2A 2A 2A 2A 7B
+       5F 28 40 29 20 7D
+       20 20 20 20 20 20
+       20
+ 032B  20 20 20 20 2A 20				 db   '    *                 ~*       '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 7E 2A
+       20 20 20 20 20 20
+       20
+ 034A  20 20 20 2A 20 20				 db   '   *                    *      '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       2A 20 20 20 20 20
+       20
+ 0369  20 20 20 2A 20 20				 db   '   *     O        O     *      '
+       20 20 20 4F 20 20
+       20 20 20 20 20 20
+       4F 20 20 20 20 20
+       2A 20 20 20 20 20
+       20
+ 0388  20 20 2A 2A 2A 20				 db   '  ***        ()        ***     '
+       20 20 20 20 20 20
+       20 28 29 20 20 20
+       20 20 20 20 20 2A
+       2A 2A 20 20 20 20
+       20
+ 03A7  20 20 20 2A 2A 2A				 db   '   ***                ***      '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 2A 2A
+       2A 20 20 20 20 20
+       20
+ 03C6  20 20 20 20 20 2A				 db   '     ***            ***        '
+       2A 2A 20 20 20 20
+       20 20 20 20 20 20
+       20 20 2A 2A 2A 20
+       20 20 20 20 20 20
+       20
+ 03E5  20 20 20 20 20 20				 db   '        ************           '
+       20 20 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 20 20 20 20
+       20 20 20 20 20 20
+       20
+ 0404  20 20 20 20 20 20				 db   '                               '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20
+							 
+ = 001F				len_hellok	equ  31
+ 0423 02			hellok_column	db	2
+ 0424 08			hellok_row		db	8
+
+ 0425 3D 3D 3D 3D 3D 3D		manu	db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 044D  20 20 20 20 20 20			db	'       Welcome to Function Manu!        '
+       20 57 65 6C 63 6F
+       6D 65 20 74 6F 20
+       46 75 6E 63 74 69
+       6F 6E 20 4D 61 6E
+       75 21 20 20 20 20
+       20 20 20 20
+ 0475  20 20 20 20 20 20			db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 049D  20 20 20 20 31 20			db  '    1         World Time                '
+       20 20 20 20 20 20
+       20 20 57 6F 72 6C
+       64 20 54 69 6D 65
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 04C5  20 20 20 20 32 20			db  '    2         Alarm Clock               '
+       20 20 20 20 20 20
+       20 20 41 6C 61 72
+       6D 20 43 6C 6F 63
+       6B 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 04ED  20 20 20 20 33 20			db  '    3         Countdown Timer           '
+       20 20 20 20 20 20
+       20 20 43 6F 75 6E
+       74 64 6F 77 6E 20
+       54 69 6D 65 72 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0515  20 20 20 20 34 20			db  '    4         Back to Clock             '
+       20 20 20 20 20 20
+       20 20 42 61 63 6B
+       20 74 6F 20 43 6C
+       6F 63 6B 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 053D  20 20 20 20 35 20			db  '    5         Help&About                '
+       20 20 20 20 20 20
+       20 20 48 65 6C 70
+       26 41 62 6F 75 74
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0565  20 20 20 20 36 20			db  '    6         Quit                      '
+       20 20 20 20 20 20
+       20 20 51 75 69 74
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 058D  20 20 20 20 20 20			db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 05B5  3D 3D 3D 3D 3D 3D			db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 05DD  45 6E 74 65 72 20			db  'Enter Function Num:                     '
+       46 75 6E 63 74 69
+       6F 6E 20 4E 75 6D
+       3A 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+
+				     	
+ = 0028				len_manu  equ  40
+ 0605 21			manu_column  db  33
+ 0606 08			manu_row     db  8
+ 0607 34			enter_column   db  52
+ 0608 13			enter_row      db  19
+ 0609 65 72 72 6F 72 21		mess1  db  'error! Enter again.$'
+       20 45 6E 74 65 72
+       20 61 67 61 69 6E
+       2E 24
+					
+				;world_time--------------------------------------
+
+ 061D 3D 3D 3D 3D 3D 3D		world_time	db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 0645  20 20 20 20 20 20				db	'        *** World   Time ***            '
+       20 20 2A 2A 2A 20
+       57 6F 72 6C 64 20
+       20 20 54 69 6D 65
+       20 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 066D  20 20 20 20 20 20				db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0695  20 20 20 20 20 2A				db  '     *    1     BeiJing                 '
+       20 20 20 20 31 20
+       20 20 20 20 42 65
+       69 4A 69 6E 67 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 06BD  20 20 20 20 20 2A				db  '     *    2     Tokyo                   '
+       20 20 20 20 32 20
+       20 20 20 20 54 6F
+       6B 79 6F 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 06E5  20 20 20 20 20 2A				db  '     *    3     London                  '
+       20 20 20 20 33 20
+       20 20 20 20 4C 6F
+       6E 64 6F 6E 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 070D  20 20 20 20 20 2A				db  '     *    4     New York                '
+       20 20 20 20 34 20
+       20 20 20 20 4E 65
+       77 20 59 6F 72 6B
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0735  20 20 20 20 20 2A				db  '     *    5     Paris                   '
+       20 20 20 20 35 20
+       20 20 20 20 50 61
+       72 69 73 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 075D  20 20 20 20 20 2A				db  '     *    6     Back to Manu            '
+       20 20 20 20 36 20
+       20 20 20 20 42 61
+       63 6B 20 74 6F 20
+       4D 61 6E 75 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0785  20 20 20 20 20 20				db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 07AD  3D 3D 3D 3D 3D 3D				db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 07D5  45 6E 74 65 72 20				db  'Enter Function Num:                     '	
+       46 75 6E 63 74 69
+       6F 6E 20 4E 75 6D
+       3A 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 07FD 0D			all_sub      db 13
+ 07FE 0E			dif_tokyo	 db 14
+ 07FF 05			dif_london   db 5
+ 0800 00			dif_ny       db 0
+ 0801 06			dif_paris    db 6
+ 0802 00			what_time    db ? 
+
+ 0803 42 65 69 6A 69 6E		name_beijing  db  'Beijing'
+       67
+ 080A 54 6F 6B 79 6F		name_tokyo    db  'Tokyo'
+ 080F 4C 6F 6E 64 6F 6E		name_london   db  'London'
+ 0815 4E 65 77 20 59 6F		name_ny       db  'New York'
+       72 6B
+ 081D 50 61 72 69 73		name_paris    db  'Paris'
+
+				;help-----------------------------------------------
+
+ 0822 2A 2A 2A 2A 2A 2A		about_info   db   '****************************** '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       20
+ 0841  2A 20 20 20 20 20				 db   '*      Hello Kitty Clock     * '
+       20 48 65 6C 6C 6F
+       20 4B 69 74 74 79
+       20 43 6C 6F 63 6B
+       20 20 20 20 20 2A
+       20
+ 0860  2A 20 20 20 20 20				 db   '*                            * '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 2A
+       20
+ 087F  2A 44 65 73 63 72				 db   '*Description:A multi-function* '
+       69 70 74 69 6F 6E
+       3A 41 20 6D 75 6C
+       74 69 2D 66 75 6E
+       63 74 69 6F 6E 2A
+       20
+ 089E  2A 20 20 20 20 20				 db   '*        digital alarm clock * '
+       20 20 20 64 69 67
+       69 74 61 6C 20 61
+       6C 61 72 6D 20 63
+       6C 6F 63 6B 20 2A
+       20
+ 08BD  2A 56 65 72 73 69				 db   '*Version:1.0                 * '
+       6F 6E 3A 31 2E 30
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 2A
+       20
+ 08DC  2A 44 61 74 65 3A				 db   '*Date:2011-6-9               * '
+       32 30 31 31 2D 36
+       2D 39 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 2A
+       20
+ 08FB  2A 41 75 74 68 6F				 db   '*Author:Yiran Wang-102873    * '
+       72 3A 59 69 72 61
+       6E 20 57 61 6E 67
+       2D 31 30 32 38 37
+       33 20 20 20 20 2A
+       20
+ 091A  2A 45 6D 61 69 6C				 db   '*Email:                      * '
+       3A 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 2A
+       20
+ 0939  2A 20 20 20 20 63				 db   '*    combustible44@gmail.com * '
+       6F 6D 62 75 73 74
+       69 62 6C 65 34 34
+       40 67 6D 61 69 6C
+       2E 63 6F 6D 20 2A
+       20
+ 0958  2A 2A 2A 2A 2A 2A				 db   '****************************** '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       20
+ 0977 3D 3D 3D 3D 3D 3D		help_info	db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 099F  20 20 20 20 20 20				db	'                Help                    '
+       20 20 20 20 20 20
+       20 20 20 20 48 65
+       6C 70 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 09C7  31 20 57 6F 72 6C				db  '1 World Time:View current time around   '
+       64 20 54 69 6D 65
+       3A 56 69 65 77 20
+       63 75 72 72 65 6E
+       74 20 74 69 6D 65
+       20 61 72 6F 75 6E
+       64 20 20 20
+ 09EF  74 68 65 20 77 6F				db  'the world.                              '
+       72 6C 64 2E 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0A17  32 20 41 6C 61 72				db  '2 Alarm Clock:Set time to get alarmed.  '
+       6D 20 43 6C 6F 63
+       6B 3A 53 65 74 20
+       74 69 6D 65 20 74
+       6F 20 67 65 74 20
+       61 6C 61 72 6D 65
+       64 2E 20 20
+ 0A3F  48 65 6C 6C 6F 4B				db  'HelloKitty will be flashing to alarm you'
+       69 74 74 79 20 77
+       69 6C 6C 20 62 65
+       20 66 6C 61 73 68
+       69 6E 67 20 74 6F
+       20 61 6C 61 72 6D
+       20 79 6F 75
+ 0A67  20 20 20 20 20 20				db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0A8F  33 20 43 6F 75 6E				db  '3 Countdown Timer:Set seconds to count  '
+       74 64 6F 77 6E 20
+       54 69 6D 65 72 3A
+       53 65 74 20 73 65
+       63 6F 6E 64 73 20
+       74 6F 20 63 6F 75
+       6E 74 20 20
+ 0AB7  66 72 6F 6D 2E 50				db  'from.Press any key to start.Any key to  '
+       72 65 73 73 20 61
+       6E 79 20 6B 65 79
+       20 74 6F 20 73 74
+       61 72 74 2E 41 6E
+       79 20 6B 65 79 20
+       74 6F 20 20
+ 0ADF  70 61 75 73 65 20				db  'pause during the counting,then 0 to manu'
+       64 75 72 69 6E 67
+       20 74 68 65 20 63
+       6F 75 6E 74 69 6E
+       67 2C 74 68 65 6E
+       20 30 20 74 6F 20
+       6D 61 6E 75
+ 0B07  20 20 20 20 20 20				db  '                PRESS ANY KEY ->MANU    '
+       20 20 20 20 20 20
+       20 20 20 20 50 52
+       45 53 53 20 41 4E
+       59 20 4B 45 59 20
+       2D 3E 4D 41 4E 55
+       20 20 20 20
+ 0B2F  3D 3D 3D 3D 3D 3D				db	'========================================' 
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+
+				;Alarms---------------------------------------------
+ 0B57 20 20 20 20 20 20		HelloKitty2  db   '       *            *          '
+       20 2A 20 20 20 20
+       20 20 20 20 20 20
+       20 20 2A 20 20 20
+       20 20 20 20 20 20
+       20
+ 0B76  20 20 20 20 20 20				 db   '      ****        _***_        '
+       2A 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       5F 2A 2A 2A 5F 20
+       20 20 20 20 20 20
+       20
+ 0B95  20 20 20 20 20 2A				 db   '     ************{_(@) }       '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 7B
+       5F 28 40 29 20 7D
+       20 20 20 20 20 20
+       20
+ 0BB4  20 20 20 20 2A 2A				 db   '    ******************~*       '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 7E 2A
+       20 20 20 20 20 20
+       20
+ 0BD3  20 20 20 2A 2A 2A				 db   '   **********************      '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 20 20 20 20 20
+       20
+ 0BF2  20 20 20 2A 2A 2A				 db   '   ******O********O******      '
+       2A 2A 2A 4F 2A 2A
+       2A 2A 2A 2A 2A 2A
+       4F 2A 2A 2A 2A 2A
+       2A 20 20 20 20 20
+       20
+ 0C11  20 20 2A 2A 2A 2A				 db   '  ***********()***********     '
+       2A 2A 2A 2A 2A 2A
+       2A 28 29 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 20 20 20 20
+       20
+ 0C30  20 20 20 2A 2A 2A				 db   '   **********************      '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 20 20 20 20 20
+       20
+ 0C4F  20 20 20 20 20 2A				 db   '     ******************        '
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 20
+       20 20 20 20 20 20
+       20
+ 0C6E  20 20 20 20 20 20				 db   '        ************           '
+       20 20 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 20 20 20 20
+       20 20 20 20 20 20
+       20
+ 0C8D  20 20 20 20 20 20				 db   '                               '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20
+
+				 
+ 0CAC 3D 3D 3D 3D 3D 3D		alarming	   db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 0CD4  20 20 20 20 20 20					db	'                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0CFC  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0D24  20 20 20 20 20 20					db  '          ******************            '
+       20 20 20 20 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0D4C  20 20 20 20 20 20					db  '          *    Alarm!!!!   *            '
+       20 20 20 20 2A 20
+       20 20 20 41 6C 61
+       72 6D 21 21 21 21
+       20 20 20 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0D74  20 20 20 20 20 20					db  '          ******************            '
+       20 20 20 20 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0D9C  20 20 20 20 20 20					db  '          *  TIME IS UP!!  *            '
+       20 20 20 20 2A 20
+       20 54 49 4D 45 20
+       49 53 20 55 50 21
+       21 20 20 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0DC4  20 20 20 20 20 20					db  '          ******************            '
+       20 20 20 20 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 2A 2A
+       2A 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0DEC  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0E14  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0E3C  3D 3D 3D 3D 3D 3D					db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 0E64  50 72 65 73 73 20					db  'Press any key to manu.                  '
+       61 6E 79 20 6B 65
+       79 20 74 6F 20 6D
+       61 6E 75 2E 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+
+ 0E8C 00			alarm_hour    db   0
+ 0E8D 00			alarm_min     db   0
+ 0E8E 00			alarm_on      db   0
+ 0E8F 39			hour_column   db	57
+ 0E90 3C			min_column    db    60
+ 0E91 0D			hour_row	  db    13
+ 0E92 32			on_column     db    50
+ 0E93 10			on_row        db    16
+
+ 0E94 41 6C 61 72 6D 20		string2       db   'Alarm is on!$'
+       69 73 20 6F 6E 21
+       24
+ 0EA1 50 72 65 73 73 20		string22     db   'Press any key to manu'
+       61 6E 79 20 6B 65
+       79 20 74 6F 20 6D
+       61 6E 75
+
+ 0EB6 3D 3D 3D 3D 3D 3D		alarm_screen    db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 0EDE  20 20 20 20 20 20					db	'        *** Alarm  Clock ***            '
+       20 20 2A 2A 2A 20
+       41 6C 61 72 6D 20
+       20 43 6C 6F 63 6B
+       20 2A 2A 2A 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0F06  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0F2E  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0F56  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0F7E  20 20 20 20 20 20					db  '       Set Alarm Time   00:00           '
+       20 53 65 74 20 41
+       6C 61 72 6D 20 54
+       69 6D 65 20 20 20
+       30 30 3A 30 30 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0FA6  20 20 20 20 20 20					db  '                        (h:m)           '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       28 68 3A 6D 29 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0FCE  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 0FF6  20 20 20 20 20 20					db  '       Alarm on?     1 Yes              '
+       20 41 6C 61 72 6D
+       20 6F 6E 3F 20 20
+       20 20 20 31 20 59
+       65 73 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 101E  20 20 20 20 20 20					db  '                     0 No               '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 30 20 4E
+       6F 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 1046  3D 3D 3D 3D 3D 3D					db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 106E  20 20 20 20 20 20					db  '                                        '
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+				;countdown_timer---------------------------------
+ 1096 3D 3D 3D 3D 3D 3D		countScreen     db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 10BE  20 2A 43 6F 75 6E					db	' *Countdown* |                          '
+       74 64 6F 77 6E 2A
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 10E6  20 20 2A 2A 54 69					db  '  **Timer**  |                          '
+       6D 65 72 2A 2A 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 110E  20 20 20 20 20 20					db  '             |                          '
+       20 20 20 20 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 1136  20 20 20 53 74 61					db  '   Start     |                          '
+       72 74 20 20 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 115E  20 20 43 6F 75 6E					db  '  Counting   |                          '
+       74 69 6E 67 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 1186  20 20 20 46 72 6F					db  '   From      |                          '
+       6D 20 20 20 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 11AE  20 28 30 30 31 7E					db  ' (001~999):  |                          '
+       39 39 39 29 3A 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 11D6  20 20 20 20 30 30					db  '    000      |                          '
+       30 20 20 20 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 11FE  20 20 20 20 20 20					db  '             |                          '
+       20 20 20 20 20 20
+       20 7C 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 1226  3D 3D 3D 3D 3D 3D					db	'========================================'
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D 3D 3D
+       3D 3D 3D 3D
+ 124E  20 20 20 20 20 20					db  '                                        '  
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20 20 20
+       20 20 20 20
+ 1276 25			count_column    db  37
+ 1277 10			count_row       db  16
+ 1278 0000			countnum        dw  ?
+ 127A 00			count1          db  0
+ 127B 00			count2          db  0
+ 127C 00			count3          db  0
+ 127D 00			isup            db  0
+ 127E 50 72 65 73 73 20		string4         db  'Press any key to start  '
+       61 6E 79 20 6B 65
+       79 20 74 6F 20 73
+       74 61 72 74 20 20
+ 1296 50 72 65 73 73 20		string5         db  'Press any key to stop   '
+       61 6E 79 20 6B 65
+       79 20 74 6F 20 73
+       74 6F 70 20 20 20
+ 12AE 30 2D 3E 6D 61 6E		string7         db  '0->manu; others->restart'
+       75 3B 20 6F 74 68
+       65 72 73 2D 3E 72
+       65 73 74 61 72 74
+				;public------------------------------------------
+ 12C6  0064 [				buff   db   100  dup('?')
+        3F
+       ]
+ 132A  004B [				clear_screen  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 1377  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 13C4  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 1411  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 145E  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 14AB  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 14F8  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 1545  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 1592  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 15DF  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 162C  004B [							  db 75 dup(' '),13,10
+        20
+       ] 0D 0A
+ 1679  004B [							  db 75 dup(' '),'$'
+        20
+       ] 24
+ 16C5					DATAS ENDS
+
+
+ 0000				STACKS SEGMENT
+ 0000  0032 [				room dw 50 dup(0)
+        0000
+       ]
+ 0064				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    mov ax,datas
+ 0003  8E D8			    mov ds,ax
+ 0005  B8 ---- R		    mov ax,stacks
+ 0008  8E D0			    mov ss,ax
+				    
+ 000A  B0 07			    mov al,07h	;将hellokitty_alarm设置为7号中断
+ 000C  B4 35				mov ah,35h
+ 000E  CD 21				int 21h
+ 0010  06				push es
+ 0011  53				push bx
+ 0012  1E				push ds
+ 0013  B8 ---- R			mov ax,seg hellokitty_alarm
+ 0016  8E D8				mov ds,ax
+ 0018  BA 098F R			mov dx,offset hellokitty_alarm
+ 001B  B0 07				mov al,7h
+ 001D  B4 25				mov ah,25h
+ 001F  CD 21				int 21h
+					
+ 0021  1F				pop ds
+ 0022				Beijing_clock:
+ 0022  A0 07FD R			mov al,all_sub
+ 0025  A2 0802 R			mov what_time,al
+ 0028  0E E8 0377		    call walking_clock
+				    
+ 002C				functionList:
+ 002C  0E E8 032C			call clear
+ 0030  B0 00				mov al,0
+ 0032  B4 0C				mov ah,0ch
+ 0034  CD 21				int 21h
+ 0036  0E E8 048A			call showKitty
+ 003A  0E E8 04C6			call showManu
+ 003E				get_func:
+ 003E  B4 01				mov ah,01h	;让用户输入一个字符并回显
+ 0040  CD 21				int 21h
+					
+ 0042				read_func:	;看用户输入了什么功能
+ 0042  3C 31				cmp al,31h
+ 0044  74 37				jz  w_time
+ 0046  3C 32				cmp al,32h
+ 0048  75 03 E9 009B			jz  alarm_clock
+ 004D  3C 33				cmp al,33h
+ 004F  75 03 E9 0125			jz  countdown
+ 0054  3C 34				cmp al,34h
+ 0056  74 CA				jz  Beijing_clock
+ 0058  3C 35				cmp al,35h
+ 005A  75 03 E9 014F			jz  help
+ 005F  3C 36				cmp al,36h
+ 0061  75 03 E9 015F			jz  exit
+					
+ 0066  BA 0609 R			mov dx,offset mess1		;如果用户输入的不是12345，则报错，让他重输
+ 0069  B4 09				mov ah,09h
+ 006B  CD 21				int 21h
+ 006D  B7 00				mov bh,0
+ 006F  8A 36 0608 R			mov dh,enter_row
+ 0073  8A 16 0607 R			mov dl,enter_column
+ 0077  B4 02				mov ah,2h
+ 0079  CD 10				int 10h
+ 007B  EB C1				jmp get_func	
+
+ 007D				w_time:
+ 007D  0E E8 03F5			call showWorld
+
+ 0081				get_wfunc:
+ 0081  B4 01				mov ah,01h
+ 0083  CD 21				int 21h
+
+ 0085				read_wfunc:	;看用户输入了什么功能
+ 0085  3C 31				cmp al,31h
+ 0087  74 99				jz  Beijing_clock
+ 0089  3C 32				cmp al,32h
+ 008B  74 27				jz  tokyo_clock
+ 008D  3C 33				cmp al,33h
+ 008F  74 30				jz  london_clock
+ 0091  3C 34				cmp al,34h
+ 0093  74 39				jz  ny_clock
+ 0095  3C 35				cmp al,35h
+ 0097  74 42				jz  paris_clock
+ 0099  3C 36				cmp al,36h
+ 009B  74 8F				jz  functionList
+					
+ 009D  BA 0609 R			mov dx,offset mess1		;如果用户输入的不是123456，则报错，让他重输
+ 00A0  B4 09				mov ah,09h
+ 00A2  CD 21				int 21h
+ 00A4  B7 00				mov bh,0
+ 00A6  8A 36 0608 R			mov dh,enter_row
+ 00AA  8A 16 0607 R			mov dl,enter_column
+ 00AE  B4 02				mov ah,2h
+ 00B0  CD 10				int 10h
+ 00B2  EB CD				jmp get_wfunc	
+
+ 00B4				tokyo_clock:
+ 00B4  A0 07FE R			mov al,dif_tokyo
+ 00B7  A2 0802 R			mov what_time,al
+ 00BA  0E E8 02E5			call walking_clock
+ 00BE  E9 FF6B				jmp functionList
+
+ 00C1				london_clock:
+ 00C1  A0 07FF R			mov al,dif_london
+ 00C4  A2 0802 R			mov what_time,al
+ 00C7  0E E8 02D8			call walking_clock
+ 00CB  E9 FF5E				jmp functionList
+
+ 00CE				ny_clock:
+ 00CE  A0 0800 R			mov al,dif_ny
+ 00D1  A2 0802 R			mov what_time,al
+ 00D4  0E E8 02CB			call walking_clock
+ 00D8  E9 FF51				jmp functionList
+					
+ 00DB				paris_clock:
+ 00DB  A0 0801 R			mov al,dif_paris
+ 00DE  A2 0802 R			mov what_time,al
+ 00E1  0E E8 02BE			call walking_clock
+ 00E5  E9 FF44				jmp functionList
+					
+ 00E8				alarm_clock:	
+ 00E8  0E E8 0466			call showAlarm
+ 00EC  0E E8 04B0			call setAlarm
+ 00F0  0E E8 0502			call onAlarm
+ 00F4  A0 0E8E R			mov al,alarm_on
+ 00F7  3C 01				cmp al,1
+ 00F9  74 03				jz have_alarm
+ 00FB  E9 FF2E				jmp functionList
+
+ 00FE				have_alarm:
+ 00FE  B0 00				mov al,0
+ 0100  A2 0E8E R			mov alarm_on,al
+ 0103  B9 000C				mov cx,12
+ 0106  BD ---- R			mov bp,seg string2
+ 0109  8E C5				mov es,bp
+ 010B  BD 0E94 R			mov bp,offset string2
+ 010E  8A 36 0E93 R			mov dh,on_row
+ 0112  8A 16 0E92 R			mov dl,on_column
+ 0116  80 C2 04				add dl,4
+ 0119  B7 00				mov bh,0
+ 011B  B3 0A				mov bl,0ah
+ 011D  B0 01				mov al,1
+ 011F  B4 13				mov ah,13h
+ 0121  CD 10				int 10h
+					
+ 0123  B9 0015				mov cx,21
+ 0126  BD ---- R			mov bp,seg string22
+ 0129  8E C5				mov es,bp
+ 012B  BD 0EA1 R			mov bp,offset string22
+ 012E  FE C6				inc dh
+ 0130  80 EA 10				sub dl,10h
+ 0133  B3 0A				mov bl,0ah
+ 0135  B0 01				mov al,1
+ 0137  B4 13				mov ah,13h
+ 0139  CD 10				int 10h
+					
+ 013B  B4 0B				mov ah,0bh
+ 013D  CD 21				int 21h
+ 013F  3C 00				cmp al,0
+ 0141  74 03 E9 FEE6			jnz functionList
+					
+ 0146  8A 3E 0E8C R			mov bh,alarm_hour
+ 014A  8A 1E 0E8D R			mov bl,alarm_min
+ 014E  B4 2C				mov ah,2ch
+ 0150  CD 21				int 21h
+ 0152  8A D1				mov dl,cl
+					
+ 0154				loop1:
+ 0154  B4 2C				mov ah,2ch
+ 0156  CD 21				int 21h
+ 0158  38 CA				cmp dl,cl
+ 015A  74 F8				jz loop1
+						
+ 015C  38 FD				cmp ch,bh
+ 015E  74 02				jz alarm1
+ 0160  EB 9C				jmp have_alarm
+ 0162				alarm1:
+ 0162  38 D9				cmp cl,bl
+ 0164  74 02				jz alarm2
+ 0166  EB 96				jmp have_alarm
+ 0168				alarm2:
+ 0168  CD 07				int 07h
+ 016A  B4 07				mov ah,07h
+ 016C  CD 21				int 21h
+ 016E  B4 0B				mov ah,0bh
+ 0170  CD 21				int 21h
+ 0172  3C 00				cmp al,0h
+ 0174  75 03 E9 FEB3			jz functionList
+					
+ 0179				countdown:
+ 0179  0E E8 0191			call showCountd
+ 017D  0E E8 0122			call getcountnum
+ 0181  B4 07				mov ah,07h
+ 0183  CD 21				int 21h
+ 0185  B4 0B				mov ah,0bh
+ 0187  CD 21				int 21h
+ 0189  3C 00				cmp al,0h
+ 018B  74 00				jz countdown2
+ 018D				countdown2:
+ 018D  0E E8 0040			call fcount
+ 0191  8A 26 127D R			mov ah,isup
+ 0195  80 FC 00				cmp ah,0
+ 0198  75 03 E9 FE8F			jz functionList
+ 019D  CD 07				int 07h
+ 019F  B4 07				mov ah,07h
+ 01A1  CD 21				int 21h
+ 01A3  B4 0B				mov ah,0bh
+ 01A5  CD 21				int 21h
+ 01A7  3C 00				cmp al,0h
+ 01A9  75 03 E9 FE7E			jz functionList	
+						
+ 01AE				help:
+ 01AE  0E E8 01AA			call clear
+ 01B2  0E E8 0754			call print_help
+ 01B6  B4 07				mov ah,07h
+ 01B8  CD 21				int 21h
+ 01BA  B4 0B				mov ah,0bh		;用户按任意键前往主菜单
+ 01BC  CD 21				int 21h
+ 01BE  3C 00				cmp al,0h
+ 01C0  75 03 E9 FE67			jz functionList
+					
+ 01C5				exit:
+ 01C5  5A				pop dx
+ 01C6  1F				pop ds
+ 01C7  B0 07				mov al,7h
+ 01C9  B4 25				mov ah,25h
+ 01CB  CD 21				int 21h	
+ 01CD  B4 4C			    mov ah,4ch	;退出程序
+ 01CF  CD 21			    int 21h
+				    
+				;子程序们-----@@@@@@@@@@@@---------------------------------------------
+
+				;倒计时程序------------------------------------------
+ 01D1				fcount proc far
+ 01D1  50				push ax
+ 01D2  53				push bx
+ 01D3  51				push cx
+ 01D4  52				push dx
+ 01D5  8A 26 028B R			mov ah,row
+ 01D9  A0 028A R			mov al,column
+ 01DC  50				push ax
+ 01DD  C6 06 028D R 09			mov eightconst,9
+					
+ 01E2				big_loop:
+ 01E2  BD ---- R			mov bp,seg string5
+ 01E5  8E C5				mov es,bp
+ 01E7  BD 1296 R			mov bp,offset string5
+ 01EA  B9 0018				mov cx,24
+ 01ED  B7 00				mov bh,0
+ 01EF  B3 0A				mov bl,0ah
+ 01F1  B0 01				mov al,1
+ 01F3  B4 13				mov ah,13h
+ 01F5  B6 11				mov dh,17
+ 01F7  B2 2F				mov dl,47
+ 01F9  CD 10				int 10h
+					
+ 01FB  B4 0B				mov ah,0bh
+ 01FD  CD 21				int 21h
+ 01FF  3C 00				cmp al,0
+ 0201  75 5E				jnz  pause
+					
+ 0203  B4 2C				mov ah,2ch
+ 0205  CD 21				int 21h
+ 0207  8A DE				mov bl,dh	
+ 0209  B0 2F				mov al,47
+ 020B  A2 028A R			mov column,al
+ 020E  B4 09				mov ah,9
+ 0210  88 26 028B R			mov row,ah
+ 0214  8A 16 127A R			mov dl,count1
+ 0218  0E E8 05C4			call showNumber
+ 021C  8A 16 127B R			mov dl,count2
+ 0220  0E E8 05BC			call showNumber
+ 0224  8A 16 127C R			mov dl,count3
+ 0228  0E E8 05B4			call showNumber
+
+ 022C				little_loop:
+ 022C  B4 2C				mov ah,2ch
+ 022E  CD 21				int 21h
+ 0230  38 F3				cmp bl,dh
+ 0232  74 F8				jz  little_loop
+
+ 0234  FF 0E 1278 R			dec countnum	
+ 0238  83 3E 1278 R 00			cmp countnum,0
+ 023D  74 4C				jz pre_timeup
+
+ 023F  A1 1278 R			mov ax,countnum
+ 0242  99				cwd
+ 0243  BB 0064				mov bx,100
+ 0246  F7 F3				div bx
+ 0248  04 30				add al,30h
+ 024A  A2 127A R			mov count1,al
+ 024D  8B C2				mov ax,dx
+ 024F  B3 0A				mov bl,10
+ 0251  F6 F3				div bl
+ 0253  04 30				add al,30h
+ 0255  A2 127B R			mov count2,al
+ 0258  80 C4 30				add ah,30h
+ 025B  88 26 127C R			mov count3,ah
+ 025F  EB 81				jmp big_loop
+					
+ 0261				pause:
+ 0261  BD ---- R			mov bp,seg string7
+ 0264  8E C5				mov es,bp
+ 0266  BD 12AE R			mov bp,offset string7
+ 0269  B9 0018				mov cx,24
+ 026C  B7 00				mov bh,0
+ 026E  B3 0A				mov bl,0ah
+ 0270  B0 01				mov al,1
+ 0272  B4 13				mov ah,13h
+ 0274  B6 11				mov dh,17
+ 0276  B2 2F				mov dl,47
+ 0278  CD 10				int 10h
+
+ 027A  B0 00				mov al,0
+ 027C  B4 0C				mov ah,0ch
+ 027E  CD 21				int 21h
+ 0280  B4 07				mov ah,07h
+ 0282  CD 21				int 21h
+ 0284  3C 30				cmp al,30h
+ 0286  74 09				jz  timeup
+ 0288  E9 FF57				jmp big_loop
+					
+ 028B				pre_timeup:
+ 028B  B4 01				mov ah,1
+ 028D  88 26 127D R			mov isup,ah
+
+ 0291				timeup:
+ 0291  C6 06 028D R 08			mov eightconst,8
+ 0296  58			 	pop ax
+ 0297  88 26 028B R		 	mov row,ah
+ 029B  A2 028A R		 	mov column,al
+ 029E  5A				pop dx
+ 029F  59				pop cx
+ 02A0  5B				pop bx
+ 02A1  58				pop ax
+ 02A2  CB				ret
+ 02A3				fcount endp
+				;fcount完-----------------
+
+				;用于获得倒计时的起始数字的--------------------------
+ 02A3				getcountnum proc far
+ 02A3  50				push ax
+ 02A4  53				push bx
+ 02A5  51				push cx
+ 02A6  52				push dx
+					
+ 02A7  B4 01				mov ah,01h
+ 02A9  CD 21				int 21h
+ 02AB  A2 127A R			mov count1,al
+ 02AE  2C 30				sub al,30h
+ 02B0  98				cbw
+ 02B1  BB 0064				mov bx,100
+ 02B4  F7 E3				mul bx
+ 02B6  A3 1278 R			mov countnum,ax
+					
+ 02B9  8A 36 1277 R			mov dh,count_row
+ 02BD  8A 16 1276 R			mov dl,count_column
+ 02C1  FE C2				inc dl
+ 02C3  B7 00				mov bh,0
+ 02C5  B4 02				mov ah,2
+ 02C7  CD 10				int 10h
+ 02C9  B4 01				mov ah,01h
+ 02CB  CD 21				int 21h
+ 02CD  A2 127B R			mov count2,al
+ 02D0  2C 30				sub al,30h
+ 02D2  B3 0A				mov bl,10
+ 02D4  F6 E3				mul bl
+ 02D6  01 06 1278 R			add countnum,ax
+					
+ 02DA  FE C2				inc dl
+ 02DC  B7 00				mov bh,0
+ 02DE  B4 02				mov ah,2
+ 02E0  CD 10				int 10h
+ 02E2  B4 01				mov ah,01h
+ 02E4  CD 21				int 21h
+ 02E6  A2 127C R			mov count3,al
+ 02E9  2C 30				sub al,30h
+ 02EB  98				cbw
+ 02EC  01 06 1278 R			add countnum,ax
+					
+ 02F0  BD ---- R			mov bp,seg string4
+ 02F3  8E C5				mov es,bp
+ 02F5  BD 127E R			mov bp,offset string4
+ 02F8  B9 0018				mov cx,24
+ 02FB  B7 00				mov bh,0
+ 02FD  B3 0A				mov bl,0ah
+ 02FF  B0 01				mov al,1
+ 0301  B4 13				mov ah,13h
+ 0303  B6 11				mov dh,17
+ 0305  B2 2F				mov dl,47
+ 0307  CD 10				int 10h
+					
+ 0309  5A				pop dx
+ 030A  59				pop cx
+ 030B  5B				pop bx
+ 030C  58				pop ax
+ 030D  CB				ret
+ 030E				getcountnum endp
+				;getcountnum完------------
+					
+					 
+				;用于显示倒计时界面的--------------------------------
+ 030E				showCountd proc far
+ 030E  50				push ax
+ 030F  53				push bx
+ 0310  51				push cx
+ 0311  52				push dx
+					
+ 0312  BD ---- R			mov bp,seg countScreen
+ 0315  8E C5				mov es,bp
+ 0317  BD 1096 R			mov bp,offset countScreen
+ 031A  8A 26 0606 R			mov ah,manu_row
+ 031E  50				push ax
+
+ 031F  B9 000C				mov cx,12
+
+ 0322				loop_showCountd:
+ 0322  51				push cx
+ 0323  B9 0028				mov cx,len_manu
+ 0326  8A 36 0606 R			mov dh,manu_row
+ 032A  8A 16 0605 R			mov dl,manu_column
+ 032E  B7 00				mov bh,0
+ 0330  B3 0A				mov bl,0ah
+ 0332  B0 01				mov al,1
+ 0334  B4 13				mov ah,13h
+ 0336  CD 10				int 10h
+ 0338  FE C6				inc dh
+ 033A  88 36 0606 R			mov manu_row,dh
+ 033E  83 C5 28				add bp,len_manu
+ 0341  59				pop cx
+ 0342  E2 DE			loop loop_showCountd
+
+ 0344  58				pop ax
+ 0345  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+ 0349  B7 00				mov bh,0
+ 034B  8A 16 1276 R			mov dl,count_column
+ 034F  8A 36 1277 R			mov dh,count_row
+ 0353  B4 02				mov ah,2h		;置光标
+ 0355  CD 10				int 10h
+ 0357  5A				pop dx
+ 0358  59				pop cx
+ 0359  5B				pop bx
+ 035A  58				pop ax
+ 035B  CB				ret
+ 035C				showCountd endp	
+				;showCountd完------------------
+
+
+				;清空从第八行开始的一块区域--------------------------
+ 035C				clear proc far
+ 035C  50				push ax
+ 035D  53				push bx
+ 035E  52				push dx
+ 035F  B7 00			    mov bh,0
+ 0361  B6 08			    mov dh,8
+ 0363  B2 00			    mov dl,0
+ 0365  B4 02			    mov ah,2h
+ 0367  CD 10			    int 10h
+ 0369  BA 132A R			mov dx,offset clear_screen
+ 036C  B4 09				mov ah,09h
+ 036E  CD 21				int 21h
+ 0370  B7 00				mov bh,0
+ 0372  B6 08			    mov dh,8
+ 0374  B2 00			    mov dl,0
+ 0376  B4 02			    mov ah,2h
+ 0378  CD 10			    int 10h
+ 037A  5A				pop dx
+ 037B  5B				pop bx
+ 037C  58				pop ax
+ 037D  CB				ret
+ 037E				clear endp	
+				;clear完---------------
+
+				;一个处理时间的子程序，使之保持在00~24,参数是ch和what_time-------------
+ 037E				time_processor proc far
+ 037E  50				push ax
+ 037F  53				push bx
+ 0380  52				push dx
+ 0381  02 2E 0802 R			add ch,what_time
+ 0385  2A 2E 07FD R			sub ch,all_sub
+ 0389  80 FD 18				cmp ch,24
+ 038C  73 07				jnb over_24
+ 038E  80 FD 00				cmp ch,0
+ 0391  72 07				jb  below_0
+ 0393  EB 0A				jmp finish_tpro
+					
+ 0395				over_24:
+ 0395  80 ED 18				sub ch,24
+ 0398  EB 05				jmp finish_tpro
+					
+ 039A				below_0:
+ 039A  80 C5 18				add ch,24
+ 039D  EB 00				jmp finish_tpro
+					
+ 039F				finish_tpro:		
+ 039F  5A				pop dx
+ 03A0  5B				pop bx
+ 03A1  58				pop ax
+ 03A2  CB				ret
+ 03A3				time_processor endp
+				;time_processor完----------
+
+
+				;一个显示系统时间的大子程序，参数是what_time里面的数字----------------
+ 03A3				walking_clock proc far
+ 03A3  50				push ax
+ 03A4  53				push bx
+ 03A5  51				push cx
+ 03A6  52				push dx
+
+ 03A7				clock:
+ 03A7  0E E8 FFB1			call clear
+ 03AB  B7 00				mov bh,0
+ 03AD  C6 06 0294 R 11			mov c_row,17
+ 03B2  C6 06 0293 R 3C			mov c_column,60
+ 03B7  B4 02				mov ah,2
+ 03B9  CD 10				int 10h
+ 03BB  0E E8 003C			call where_time
+ 03BF  B4 2C			    mov ah,2Ch	;读时钟
+ 03C1  CD 21			    int 21h
+ 03C3  0E E8 FFB7			call time_processor
+ 03C7  88 36 028C R			mov temp,dh
+ 03CB  C6 06 028A R 02		    mov column,2
+ 03D0  C6 06 028B R 08		    mov row,8
+				    
+ 03D5  0E E8 023D			call printWord
+ 03D9  0E E8 03B2			call getHMS
+
+ 03DD  EB 00				jmp newclock    	
+					
+ 03DF				newClock:
+ 03DF  B4 2C				mov ah,2Ch	;读时钟
+ 03E1  CD 21			    int 21h   
+				    
+ 03E3  A0 028C R		    mov al,temp
+ 03E6  38 F0				cmp al,dh
+ 03E8  74 F5				jz	newClock
+					
+ 03EA  B4 0B				mov ah,0bh	;查看键盘状态，用户是否输入任何字符
+ 03EC  CD 21			    int 21h
+ 03EE  3C 00				cmp al,0h
+ 03F0  74 B5			    jz clock
+				    
+ 03F2  B4 07			   	mov ah,07h	;把原来输入的any key吞掉
+ 03F4  CD 21				int 21h
+ 03F6  5A				pop dx
+ 03F7  59				pop cx
+ 03F8  5B				pop bx
+ 03F9  58				pop ax
+ 03FA  CB				ret
+ 03FB				walking_clock endp
+				;walking_clock完------------------
+
+				;显示北京时间中的日期or外国城市名--------------
+ 03FB				where_time proc far
+ 03FB  50				push ax
+ 03FC  53				push bx
+ 03FD  51				push cx
+ 03FE  52				push dx
+ 03FF  B7 00				mov bh,0
+ 0401  B3 0A				mov bl,0ah
+ 0403  8A 36 0294 R			mov dh,c_row
+ 0407  B2 21				mov dl,33
+ 0409  B0 01				mov al,1
+ 040B  8A 26 0802 R			mov ah,what_time
+ 040F  80 FC 0D				cmp ah,13
+ 0412  74 14				jz  is_beijing
+ 0414  80 FC 0E				cmp ah,14
+ 0417  74 20				jz  is_tokyo
+ 0419  80 FC 05				cmp ah,5
+ 041C  74 42				jz  is_london
+ 041E  80 FC 00				cmp ah,0
+ 0421  74 30				jz  is_ny
+ 0423  80 FC 06				cmp ah,6
+ 0426  74 1E				jz  is_paris
+						
+ 0428				is_beijing:	
+ 0428  0E E8 0212			call printDate	;显示日期
+ 042C  BD ---- R			mov bp,seg name_beijing
+ 042F  8E C5				mov es,bp
+ 0431  BD 0803 R			mov bp,offset name_beijing
+ 0434  B9 0007				mov cx,7
+ 0437  EB 34				jmp finish_where
+
+ 0439				is_tokyo:
+ 0439  BD ---- R			mov bp,seg name_tokyo
+ 043C  8E C5				mov es,bp
+ 043E  BD 080A R			mov bp,offset name_tokyo
+ 0441  B9 0005				mov cx,5
+ 0444  EB 27				jmp finish_where
+					
+ 0446				is_paris:
+ 0446  BD ---- R			mov bp,seg name_paris
+ 0449  8E C5				mov es,bp
+ 044B  BD 081D R			mov bp,offset name_paris
+ 044E  B9 0005				mov cx,5
+ 0451  EB 1A				jmp finish_where
+
+ 0453				is_ny:
+ 0453  BD ---- R			mov bp,seg name_ny
+ 0456  8E C5				mov es,bp
+ 0458  BD 0815 R			mov bp,offset name_ny
+ 045B  B9 0008				mov cx,8
+ 045E  EB 0D				jmp finish_where
+					
+ 0460				is_london:
+ 0460  BD ---- R			mov bp,seg name_london
+ 0463  8E C5				mov es,bp
+ 0465  BD 080F R			mov bp,offset name_london
+ 0468  B9 0006				mov cx,6
+ 046B  EB 00				jmp finish_where
+
+ 046D				finish_where:
+ 046D  B4 13				mov ah,13h
+ 046F  CD 10				int 10h	
+ 0471  5A				pop dx
+ 0472  59				pop cx
+ 0473  5B				pop bx
+ 0474  58				pop ax
+ 0475  CB				ret
+ 0476				where_time endp
+
+
+				;一个显示世界时钟地区列表的子程序--------
+ 0476				showWorld proc far
+ 0476  50				push ax
+ 0477  53				push bx
+ 0478  51				push cx
+ 0479  52				push dx
+ 047A  BD ---- R			mov bp,seg world_time
+ 047D  8E C5				mov es,bp
+ 047F  BD 061D R			mov bp,offset world_time
+ 0482  8A 26 0606 R			mov ah,manu_row
+ 0486  50				push ax
+
+ 0487  B9 000C				mov cx,12
+
+ 048A				loop_showWorld:
+ 048A  51				push cx
+ 048B  B9 0028				mov cx,len_manu
+ 048E  8A 36 0606 R			mov dh,manu_row
+ 0492  8A 16 0605 R			mov dl,manu_column
+ 0496  B7 00				mov bh,0
+ 0498  B3 0A				mov bl,0ah
+ 049A  B0 01				mov al,1
+ 049C  B4 13				mov ah,13h
+ 049E  CD 10				int 10h
+ 04A0  FE C6				inc dh
+ 04A2  88 36 0606 R			mov manu_row,dh
+ 04A6  83 C5 28				add bp,len_manu
+ 04A9  59				pop cx
+ 04AA  E2 DE			loop loop_showWorld
+
+ 04AC  58				pop ax
+ 04AD  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+ 04B1  B7 00				mov bh,0
+ 04B3  8A 16 0607 R			mov dl,enter_column
+ 04B7  8A 36 0608 R			mov dh,enter_row
+ 04BB  B4 02				mov ah,2h		;置光标
+ 04BD  CD 10				int 10h
+ 04BF  5A				pop dx
+ 04C0  59				pop cx
+ 04C1  5B				pop bx
+ 04C2  58				pop ax
+ 04C3  CB				ret
+ 04C4				showWorld endp
+				;showWorld完-------------
+
+				;一个显示Hello Kitty的子程序---------
+ 04C4				showKitty proc far		
+ 04C4  50				push ax
+ 04C5  53				push bx
+ 04C6  51				push cx
+ 04C7  52				push dx
+ 04C8  BD ---- R			mov bp,seg HelloKitty
+ 04CB  8E C5				mov es,bp
+ 04CD  BD 02CE R			mov bp,offset HelloKitty
+ 04D0  B9 000B				mov cx,11
+ 04D3  B7 00				mov bh,0
+ 04D5  8A 26 0424 R			mov ah,hellok_row
+ 04D9  50				push ax
+ 04DA				Kitty:
+ 04DA  51				push cx
+ 04DB  B9 001F				mov cx,len_hellok
+ 04DE  8A 36 0424 R			mov dh,hellok_row
+ 04E2  8A 16 0423 R			mov dl,hellok_column
+ 04E6  B3 0F				mov bl,0fh
+ 04E8  B0 01				mov al,1
+ 04EA  B4 13				mov ah,13h
+ 04EC  CD 10				int 10h
+ 04EE  FE C6				inc dh
+ 04F0  88 36 0424 R			mov hellok_row,dh
+ 04F4  83 C5 1F				add bp,1fh
+ 04F7  59				pop cx
+ 04F8  E2 E0			loop Kitty
+ 04FA  58			    pop ax
+ 04FB  88 26 0424 R		    mov hellok_row,ah	;恢复原坐标
+ 04FF  5A				pop dx
+ 0500  59				pop cx
+ 0501  5B				pop bx
+ 0502  58				pop ax
+ 0503  CB				ret
+ 0504				showKitty endp
+					
+				;showKitty完---------
+
+				;显示主菜单------------------------------
+ 0504				showManu proc far	
+ 0504  50				push ax
+ 0505  53				push bx
+ 0506  51				push cx
+ 0507  52				push dx
+ 0508  B9 000C				mov cx,12
+ 050B  BD ---- R			mov bp,seg manu
+ 050E  8E C5				mov es,bp
+ 0510  BD 0425 R			mov bp,offset manu
+ 0513  8A 26 0606 R			mov ah,manu_row
+ 0517  50				push ax
+					
+ 0518				manu_loop:
+ 0518  51				push cx
+ 0519  B9 0028				mov cx,len_manu
+ 051C  B3 0A				mov	bl,0ah
+ 051E  B7 00				mov	bh,0
+ 0520  8A 36 0606 R			mov dh,manu_row
+ 0524  8A 16 0605 R			mov dl,manu_column
+ 0528  B0 01				mov al,1
+ 052A  B4 13				mov ah,13h
+ 052C  CD 10				int 10h
+ 052E  FE C6				inc dh
+ 0530  88 36 0606 R			mov manu_row,dh
+ 0534  83 C5 28				add bp,40
+ 0537  59				pop cx
+ 0538  E2 DE			loop manu_loop
+					
+ 053A  B7 00				mov bh,0
+ 053C  8A 16 0607 R			mov dl,enter_column
+ 0540  8A 36 0608 R			mov dh,enter_row
+ 0544  B4 02				mov ah,2h		;置光标
+ 0546  CD 10				int 10h
+ 0548  58				pop ax
+ 0549  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+ 054D  5A				pop dx
+ 054E  59				pop cx
+ 054F  5B				pop bx
+ 0550  58				pop ax
+ 0551  CB				ret
+ 0552				showManu endp
+				;showManu完---------
+
+				;用于显示alarm功能下的设定时间提示和开关-----------------------
+ 0552				showAlarm proc far
+ 0552  50				push ax
+ 0553  53				push bx
+ 0554  51				push cx
+ 0555  52				push dx
+ 0556  B9 000C				mov cx,12
+ 0559  BD ---- R			mov bp,seg alarm_screen
+ 055C  8E C5				mov es,bp
+ 055E  BD 0EB6 R			mov bp,offset alarm_screen
+ 0561  8A 26 0606 R			mov ah,manu_row
+ 0565  50				push ax
+					
+ 0566				showAlarm_loop:
+ 0566  51				push cx
+ 0567  B9 0028				mov cx,len_manu
+ 056A  B3 0A				mov	bl,0ah
+ 056C  B7 00				mov	bh,0
+ 056E  8A 36 0606 R			mov dh,manu_row
+ 0572  8A 16 0605 R			mov dl,manu_column
+ 0576  B0 01				mov al,1
+ 0578  B4 13				mov ah,13h
+ 057A  CD 10				int 10h
+ 057C  FE C6				inc dh
+ 057E  88 36 0606 R			mov manu_row,dh
+ 0582  83 C5 28				add bp,40
+ 0585  59				pop cx
+ 0586  E2 DE			loop showAlarm_loop
+					
+ 0588  B7 00				mov bh,0
+ 058A  8A 16 0E92 R			mov dl,on_column
+ 058E  8A 36 0E93 R			mov dh,on_row
+ 0592  B4 02				mov ah,2h		;置光标
+ 0594  CD 10				int 10h
+ 0596  58				pop ax
+ 0597  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+ 059B  5A				pop dx
+ 059C  59				pop cx
+ 059D  5B				pop bx
+ 059E  58				pop ax
+ 059F  CB				ret
+ 05A0				showAlarm endp
+				;showAlarm完-----------
+
+				;用于将用户输入的闹钟时间存储起来--------------------------
+ 05A0				setAlarm proc far    
+ 05A0  50			    push ax
+ 05A1  53			    push bx
+ 05A2  51			    push cx
+ 05A3  52			    push dx
+				    
+ 05A4  B7 00			    mov bh,0
+ 05A6  8A 16 0E8F R			mov dl,hour_column
+ 05AA  8A 36 0E91 R			mov dh,hour_row
+ 05AE  B4 02				mov ah,2h		;置光标
+ 05B0  CD 10				int 10h
+ 05B2  B4 01				mov ah,01h
+ 05B4  CD 21				int 21h
+ 05B6  2C 30				sub al,30h
+ 05B8  B1 0A				mov cl,10
+ 05BA  F6 E1				mul cl		
+ 05BC  8A E8				mov ch,al	;小时的十位暂存于ch
+ 05BE  FE C2				inc dl
+ 05C0  B4 02				mov ah,2h
+ 05C2  CD 10				int 10h
+ 05C4  B4 01				mov ah,01h
+ 05C6  CD 21				int 21h
+ 05C8  2C 30				sub al,30h
+ 05CA  02 C5				add al,ch	;将小时的十位和个位相加
+ 05CC  A2 0E8C R			mov alarm_hour,al
+					
+ 05CF  80 C2 02				add dl,2
+ 05D2  B4 02				mov ah,2h
+ 05D4  CD 10				int 10h
+ 05D6  B4 01				mov ah,01h
+ 05D8  CD 21				int 21h
+ 05DA  2C 30				sub al,30h
+ 05DC  F6 E1				mul cl
+ 05DE  8A E8				mov ch,al
+ 05E0  FE C2				inc dl
+ 05E2  B4 02				mov ah,2h
+ 05E4  CD 10				int 10h
+ 05E6  B4 01				mov ah,01h
+ 05E8  CD 21				int 21h
+ 05EA  2C 30				sub al,30h
+ 05EC  02 C5				add al,ch
+ 05EE  A2 0E8D R			mov alarm_min,al	;存入分钟
+					
+ 05F1  5A				pop dx
+ 05F2  59				pop cx
+ 05F3  5B				pop bx
+ 05F4  58				pop ax
+ 05F5  CB				ret
+ 05F6				setAlarm endp
+				;setAlarm完------------
+
+				;打开或关闭闹钟------------------------------------
+ 05F6				onAlarm proc far
+ 05F6  50			    push ax
+ 05F7  53			    push bx
+ 05F8  51			    push cx
+ 05F9  52			    push dx
+ 05FA  B7 00			    mov bh,0
+ 05FC  8A 16 0E92 R			mov dl,on_column
+ 0600  8A 36 0E93 R			mov dh,on_row
+ 0604  B4 02				mov ah,2h		;置光标
+ 0606  CD 10				int 10h
+ 0608  B4 01				mov ah,01h
+ 060A  CD 21				int 21h
+ 060C  2C 30				sub al,30h
+ 060E  A2 0E8E R			mov alarm_on,al	;将0或1存入alarm_on
+ 0611  5A				pop dx
+ 0612  59				pop cx
+ 0613  5B				pop bx
+ 0614  58				pop ax
+ 0615  CB				ret
+ 0616				onAlarm endp
+				;onAlarm完---------------------
+
+				;显示一排字符string1(第十行第一列)-----------------
+ 0616				printWord proc far	
+ 0616  50				push ax
+ 0617  53				push bx
+ 0618  51				push cx
+ 0619  52				push dx
+ 061A  B4 13				mov ah,13h
+ 061C  BD ---- R			mov bp,seg string1
+ 061F  8E C5				mov es,bp
+ 0621  BD 0268 R			mov bp,offset string1
+ 0624  B3 0A				mov bl,0ah
+ 0626  8A 36 0289 R			mov dh,string_row
+ 062A  8A 16 0288 R			mov dl,string_column
+ 062E  B7 00				mov bh,0
+ 0630  B9 001F				mov cx,len_string
+ 0633  CD 10				int 10h
+ 0635  0E E8 0141			call setCursor
+ 0639  5A				pop dx
+ 063A  59				pop cx
+ 063B  5B				pop bx
+ 063C  58				pop ax
+ 063D  CB				ret
+ 063E				printWord endp
+				;printWord完-----------
+
+				;一个显示当日日期的程序-----------------------
+ 063E				printDate proc far
+ 063E  50				push ax
+ 063F  53				push bx
+ 0640  51				push cx
+ 0641  52				push dx
+ 0642  B4 2A				mov ah,2ah
+ 0644  CD 21				int 21h
+ 0646  89 0E 028E R			mov year,cx
+ 064A  88 36 0290 R			mov month,dh
+ 064E  88 16 0291 R			mov day,dl
+ 0652  A2 0292 R			mov weekday,al
+					
+ 0655  A1 028E R			mov ax,year
+ 0658  99				cwd
+ 0659  BB 03E8				mov bx,1000
+ 065C  F7 F3				div bx
+ 065E  04 30				add al,30h
+ 0660  0E E8 00F0			call printIt
+					
+ 0664  8B C2				mov ax,dx
+ 0666  99				cwd
+ 0667  BB 0064				mov bx,100
+ 066A  F7 F3				div bx
+ 066C  04 30				add al,30h
+ 066E  0E E8 00E2			call printIt
+					
+ 0672  8B C2				mov ax,dx
+ 0674  99				cwd
+ 0675  BB 000A				mov bx,10
+ 0678  F7 F3				div bx
+ 067A  04 30				add al,30h
+ 067C  0E E8 00D4			call printIt
+					
+ 0680  8A C2				mov al,dl
+ 0682  04 30				add al,30h
+ 0684  0E E8 00CC			call printIt
+ 0688  B0 2F				mov al,2fh
+ 068A  0E E8 00C6			call printIt
+					
+ 068E  A0 0290 R			mov al,month
+ 0691  98				cbw
+ 0692  B3 0A				mov bl,10
+ 0694  F6 F3				div bl
+ 0696  04 30				add al,30h
+ 0698  0E E8 00B8			call printIt
+ 069C  80 C4 30				add ah,30h
+ 069F  8A C4				mov al,ah
+ 06A1  0E E8 00AF			call printIt
+ 06A5  B0 2F				mov al,2fh
+ 06A7  0E E8 00A9			call printIt
+					
+ 06AB  A0 0291 R			mov al,day
+ 06AE  98				cbw
+ 06AF  F6 F3				div bl
+ 06B1  04 30				add al,30h
+ 06B3  0E E8 009D			call printIt
+ 06B7  80 C4 30				add ah,30h
+ 06BA  8A C4				mov al,ah
+ 06BC  0E E8 0094			call printIt
+					
+ 06C0  A0 0292 R			mov al,weekday
+ 06C3  3C 00				cmp al,0
+ 06C5  74 18				jz dayzero
+ 06C7  3C 01				cmp al,1
+ 06C9  74 21				jz dayone
+ 06CB  3C 02				cmp al,2
+ 06CD  74 2A				jz daytwo
+ 06CF  3C 03				cmp al,3
+ 06D1  74 33				jz daythree
+ 06D3  3C 04				cmp al,4
+ 06D5  74 3C				jz dayfour
+ 06D7  3C 05				cmp al,5
+ 06D9  74 45				jz dayfive
+ 06DB  3C 06				cmp al,6
+ 06DD  74 4E				jz daysix
+					
+ 06DF				dayzero:
+ 06DF  BD ---- R			mov bp,seg day0
+ 06E2  8E C5				mov es,bp
+ 06E4  BD 02C7 R			mov bp,offset day0
+ 06E7  B9 0006				mov cx,6
+ 06EA  EB 4E				jmp finish
+ 06EC				dayone:
+ 06EC  BD ---- R			mov bp,seg day1
+ 06EF  8E C5				mov es,bp
+ 06F1  BD 0295 R			mov bp,offset day1
+ 06F4  B9 0006				mov cx,6
+ 06F7  EB 41				jmp finish
+ 06F9				daytwo:
+ 06F9  BD ---- R			mov bp,seg day2
+ 06FC  8E C5				mov es,bp
+ 06FE  BD 029C R			mov bp,offset day2
+ 0701  B9 0007				mov cx,7
+ 0704  EB 34				jmp finish
+ 0706				daythree:
+ 0706  BD ---- R			mov bp,seg day3
+ 0709  8E C5				mov es,bp
+ 070B  BD 02A4 R			mov bp,offset day3
+ 070E  B9 0009				mov cx,9
+ 0711  EB 27				jmp finish
+ 0713				dayfour:
+ 0713  BD ---- R			mov bp,seg day4
+ 0716  8E C5				mov es,bp
+ 0718  BD 02AE R			mov bp,offset day4
+ 071B  B9 0008				mov cx,8
+ 071E  EB 1A				jmp finish
+ 0720				dayfive:
+ 0720  BD ---- R			mov bp,seg day5
+ 0723  8E C5				mov es,bp
+ 0725  BD 02B7 R			mov bp,offset day5
+ 0728  B9 0006				mov cx,6
+ 072B  EB 0D				jmp finish
+ 072D				daysix:
+ 072D  BD ---- R			mov bp,seg day6
+ 0730  8E C5				mov es,bp
+ 0732  BD 02BE R			mov bp,offset day6
+ 0735  B9 0008				mov cx,8
+ 0738  EB 00				jmp finish
+					
+ 073A				finish:
+ 073A  8A 36 0294 R			mov dh,c_row
+ 073E  8A 16 0293 R			mov dl,c_column
+ 0742  80 EA 15				sub dl,15h
+ 0745  B3 0A				mov bl,0ah
+ 0747  B7 00				mov bh,0h
+ 0749  B0 01				mov al,1h
+ 074B  B4 13				mov ah,13h
+ 074D  CD 10				int 10h
+					
+ 074F  5A				pop dx
+ 0750  59				pop cx
+ 0751  5B				pop bx
+ 0752  58				pop ax
+ 0753  CB				ret
+ 0754				printDate endp
+
+				;printDate完-----------
+
+				;一个一个地打印某字符串中的字符,参数为al中的字符----------
+ 0754				printIt proc far 
+ 0754  50				push ax
+ 0755  53				push bx
+ 0756  51				push cx
+ 0757  52				push dx
+ 0758  B7 00				mov bh,0h
+ 075A  8A 16 0293 R			mov dl,c_column
+ 075E  8A 36 0294 R			mov dh,c_row
+ 0762  B4 02				mov ah,02h
+ 0764  CD 10				int 10h
+ 0766  B3 0A				mov bl,0ah
+ 0768  B9 0001				mov cx,1h
+ 076B  B4 09				mov ah,09h
+ 076D  FE C2				inc dl
+ 076F  88 16 0293 R			mov c_column,dl
+ 0773  CD 10				int 10h
+					
+ 0775  5A				pop dx
+ 0776  59				pop cx
+ 0777  5B				pop bx
+ 0778  58				pop ax
+ 0779  CB				ret
+ 077A				printIt endp
+
+				;printIt完-----------
+
+
+				;用于将光标置于希望用户输入字符的位置------------------
+ 077A				setCursor proc far	
+ 077A  50				push ax
+ 077B  52				push dx
+ 077C  B6 14				mov dh,14h
+ 077E  B2 3C				mov dl,60
+ 0780  B4 02				mov ah,2h
+ 0782  CD 10				int 10h
+ 0784  5A				pop dx
+ 0785  58				pop ax
+ 0786  CB				ret
+ 0787				setCursor endp
+				;setCursor完--------
+
+				;将两位数变成两个一位数，传入的参数是al寄存器中数字-----------
+ 0787				numberProcessor proc far	
+ 0787  53				push bx
+ 0788  B3 0A				mov bl,10
+ 078A  98				cbw
+ 078B  F6 F3				div bl
+ 078D  5B				pop	bx
+ 078E  CB				ret		
+ 078F				numberProcessor endp
+				;最后得到存在ah中的余数（个位数字）和al中的商（十位数字）
+				;numberProcessor完-------
+
+
+				;这个子程序用于显示小时:分钟:秒，参数为ch,cl,dh---------------
+ 078F				getHMS proc far	
+ 078F				gethour:	
+ 078F  8A C5				mov al,ch
+ 0791  0E E8 FFF2			call numberProcessor
+ 0795  8A D0				mov dl,al
+ 0797  80 C2 30				add dl,30h
+ 079A  0E E8 0042			call showNumber
+ 079E  8A D4				mov dl,ah
+ 07A0  80 C2 30				add dl,30h
+ 07A3  0E E8 0039			call showNumber
+ 07A7  0E E8 0113			call showdots
+					
+ 07AB				getmin:
+ 07AB  8A C1				mov al,cl
+ 07AD  0E E8 FFD6			call numberProcessor
+ 07B1  8A D0				mov dl,al
+ 07B3  80 C2 30				add dl,30h
+ 07B6  0E E8 0026			call showNumber
+ 07BA  8A D4				mov dl,ah
+ 07BC  80 C2 30				add dl,30h
+ 07BF  0E E8 001D			call showNumber
+ 07C3  0E E8 00F7			call showdots
+
+ 07C7				getsec:
+ 07C7  8A C6				mov al,dh
+ 07C9  0E E8 FFBA			call numberProcessor
+ 07CD  8A D0				mov dl,al
+ 07CF  80 C2 30				add dl,30h
+ 07D2  0E E8 000A			call showNumber
+ 07D6  8A D4				mov dl,ah
+ 07D8  80 C2 30				add dl,30h
+ 07DB  0E E8 0001			call showNumber
+					
+ 07DF  CB				ret
+ 07E0				getHMS endp
+
+				;getHMS完--------
+
+				;显示数字，传入的参数是dl寄存器中的一个一位数-----------------
+ 07E0				showNumber	proc far	
+ 07E0  50				push ax
+ 07E1  53				push bx
+ 07E2  51				push cx
+ 07E3  52				push dx
+
+ 07E4  B9 0007				mov cx,7h
+					
+ 07E7  80 FA 30				cmp dl,30h
+ 07EA  74 2F				jz	showZero
+ 07EC  80 FA 31				cmp dl,31h
+ 07EF  74 34				jz	showOne
+ 07F1  80 FA 32				cmp dl,32h
+ 07F4  74 39				jz	showTwo
+ 07F6  80 FA 33				cmp dl,33h
+ 07F9  74 3E				jz  showThree
+ 07FB  80 FA 34				cmp dl,34h
+ 07FE  74 43				jz  showFour
+ 0800  80 FA 35				cmp dl,35h
+ 0803  74 48				jz  showFive
+ 0805  80 FA 36				cmp dl,36h
+ 0808  74 4D				jz  showSix
+ 080A  80 FA 37				cmp dl,37h
+ 080D  74 52				jz  showSeven
+ 080F  80 FA 38				cmp dl,38h
+ 0812  74 57				jz  showEight
+ 0814  80 FA 39				cmp dl,39h
+ 0817  74 5C				jz  showNine
+ 0819  EB 64				jmp	printNumber
+					
+ 081B				showZero:
+ 081B  BD ---- R		    mov bp,seg zero
+ 081E  8E C5			    mov es,bp
+ 0820  BD 0000 R			mov bp,offset zero
+ 0823  EB 5A			    jmp printNumber
+
+ 0825				showOne:
+ 0825  BD ---- R		    mov bp,seg one
+ 0828  8E C5			    mov es,bp
+ 082A  BD 0038 R			mov bp,offset one
+ 082D  EB 50			    jmp printNumber
+				    
+ 082F				showTwo:
+ 082F  BD ---- R		    mov bp,seg two
+ 0832  8E C5			    mov es,bp
+ 0834  BD 0070 R			mov bp,offset two
+ 0837  EB 46			    jmp printNumber
+				    
+ 0839				showThree:
+ 0839  BD ---- R		    mov bp,seg three
+ 083C  8E C5			    mov es,bp
+ 083E  BD 00A8 R			mov bp,offset three
+ 0841  EB 3C			    jmp printNumber
+
+ 0843				showFour:
+ 0843  BD ---- R		    mov bp,seg four
+ 0846  8E C5			    mov es,bp
+ 0848  BD 00E0 R			mov bp,offset four
+ 084B  EB 32			    jmp printNumber
+				    
+ 084D				showFive:
+ 084D  BD ---- R		    mov bp,seg five
+ 0850  8E C5			    mov es,bp
+ 0852  BD 0118 R			mov bp,offset five
+ 0855  EB 28			    jmp printNumber
+
+ 0857				showSix:
+ 0857  BD ---- R		    mov bp,seg six
+ 085A  8E C5			    mov es,bp
+ 085C  BD 0150 R			mov bp,offset six
+ 085F  EB 1E			    jmp printNumber
+				    
+ 0861				showSeven:
+ 0861  BD ---- R		    mov bp,seg seven
+ 0864  8E C5			    mov es,bp
+ 0866  BD 0188 R			mov bp,offset seven
+ 0869  EB 14			    jmp printNumber
+
+ 086B				showEight:
+ 086B  BD ---- R		    mov bp,seg eight
+ 086E  8E C5			    mov es,bp
+ 0870  BD 01C0 R			mov bp,offset eight
+ 0873  EB 0A			    jmp printNumber
+				    
+ 0875				showNine:
+ 0875  BD ---- R		    mov bp,seg nine
+ 0878  8E C5			    mov es,bp
+ 087A  BD 01F8 R			mov bp,offset nine
+ 087D  EB 00			    jmp printNumber
+				    
+ 087F				printNumber:
+ 087F  51				push cx
+ 0880  B9 0008				mov cx,len_line
+ 0883  B7 00				mov bh,0
+ 0885  8A 36 028B R			mov dh,row
+ 0889  8A 16 028A R			mov dl,column
+ 088D  B3 0A				mov bl,0ah
+ 088F  B0 01				mov al,1
+ 0891  B4 13				mov ah,13h
+ 0893  CD 10				int 10h
+ 0895  80 C6 01				add dh,1
+ 0898  88 36 028B R			mov row,dh
+ 089C  83 C5 08				add bp,8h
+ 089F  59				pop cx
+ 08A0  E2 DD			loop printNumber
+
+ 08A2				showNumberExit:
+ 08A2  8A 26 028A R			mov ah,column
+ 08A6  80 C4 09				add ah,9h
+ 08A9  88 26 028A R			mov column,ah
+ 08AD  8A 26 028D R			mov ah,eightconst
+ 08B1  88 26 028B R			mov row,ah
+ 08B5  0E E8 FEC1			call setCursor
+ 08B9  5A				pop dx
+ 08BA  59				pop cx
+ 08BB  5B				pop bx
+ 08BC  58				pop ax
+ 08BD  CB				ret
+ 08BE				showNumber endp
+				;showNumber完-------
+
+
+				;显示时分秒之间的冒号---------------
+ 08BE				showdots proc far
+ 08BE  50				push ax
+ 08BF  53				push bx
+ 08C0  51				push cx
+ 08C1  52				push dx
+					
+ 08C2  BD ---- R			mov bp,seg dots
+ 08C5  8E C5				mov es,bp
+ 08C7  BD 0230 R			mov bp,offset dots
+ 08CA  B9 0007				mov cx,7h
+
+ 08CD				printDots:
+ 08CD  51				push cx
+ 08CE  B9 0008				mov cx,len_line
+ 08D1  B7 00				mov bh,0
+ 08D3  8A 36 028B R			mov dh,row
+ 08D7  8A 16 028A R			mov dl,column
+ 08DB  B3 0A				mov bl,0ah
+ 08DD  B0 01				mov al,1
+ 08DF  B4 13				mov ah,13h
+ 08E1  CD 10				int 10h
+ 08E3  80 C6 01				add dh,1
+ 08E6  88 36 028B R			mov row,dh
+ 08EA  83 C5 08				add bp,8h
+ 08ED  59				pop cx
+ 08EE  E2 DD			loop printDots	
+					
+ 08F0  8A 26 028A R			mov ah,column
+ 08F4  80 C4 09				add ah,9h
+ 08F7  88 26 028A R			mov column,ah
+ 08FB  B4 08				mov ah,8h
+ 08FD  88 26 028B R			mov row,ah
+ 0901  0E E8 FE75			call setCursor
+ 0905  5A				pop dx
+ 0906  59				pop cx
+ 0907  5B				pop bx
+ 0908  58				pop ax
+ 0909  CB				ret
+ 090A				showdots endp    
+				;showdots完-----------
+
+				;用于显示帮助信息--------------------------------------------
+ 090A				print_help proc far
+ 090A  50				push ax
+ 090B  53				push bx
+ 090C  51				push cx
+ 090D  52				push dx
+ 090E  BD ---- R			mov bp,seg about_info
+ 0911  8E C5				mov es,bp
+ 0913  BD 0822 R			mov bp,offset about_info
+ 0916  B9 000B				mov cx,11
+ 0919  B7 00				mov bh,0
+ 091B  8A 26 0424 R			mov ah,hellok_row
+ 091F  50				push ax
+ 0920				abouti:
+ 0920  51				push cx
+ 0921  B9 001F				mov cx,len_hellok
+ 0924  8A 36 0424 R			mov dh,hellok_row
+ 0928  8A 16 0423 R			mov dl,hellok_column
+ 092C  B3 0E				mov bl,0eh
+ 092E  B0 01				mov al,1
+ 0930  B4 13				mov ah,13h
+ 0932  CD 10				int 10h
+ 0934  FE C6				inc dh
+ 0936  88 36 0424 R			mov hellok_row,dh
+ 093A  83 C5 1F				add bp,1fh
+ 093D  59				pop cx
+ 093E  E2 E0			loop abouti
+ 0940  58			    pop ax
+ 0941  88 26 0424 R		    mov hellok_row,ah	;恢复原坐标
+
+				;显示帮助    
+ 0945  B9 000C			    mov cx,12
+ 0948  BD ---- R			mov bp,seg help_info
+ 094B  8E C5				mov es,bp
+ 094D  BD 0977 R			mov bp,offset help_info
+ 0950  8A 26 0606 R			mov ah,manu_row
+ 0954  50				push ax
+					
+ 0955				help_loop:
+ 0955  51				push cx
+ 0956  B9 0028				mov cx,len_manu
+ 0959  B3 0A				mov	bl,0ah
+ 095B  B7 00				mov	bh,0
+ 095D  8A 36 0606 R			mov dh,manu_row
+ 0961  8A 16 0605 R			mov dl,manu_column
+ 0965  B0 01				mov al,1
+ 0967  B4 13				mov ah,13h
+ 0969  CD 10				int 10h
+ 096B  FE C6				inc dh
+ 096D  88 36 0606 R			mov manu_row,dh
+ 0971  83 C5 28				add bp,40
+ 0974  59				pop cx
+ 0975  E2 DE			loop help_loop
+					
+ 0977  B7 00				mov bh,0
+ 0979  8A 16 0607 R			mov dl,enter_column
+ 097D  8A 36 0608 R			mov dh,enter_row
+ 0981  B4 02				mov ah,2h		;置光标
+ 0983  CD 10				int 10h
+ 0985  58				pop ax
+ 0986  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+					
+ 098A  5A				pop dx
+ 098B  59				pop cx
+ 098C  5B				pop bx
+ 098D  58				pop ax
+ 098E  CB				ret
+ 098F				print_help endp
+				;print_help完---------------
+
+				;闹钟kitty---------------------------------------------
+ 098F				hellokitty_alarm proc far		
+ 098F  50				push ax
+ 0990  53				push bx
+ 0991  51				push cx
+ 0992  52				push dx
+ 0993  B0 00				mov al,0
+ 0995  A2 0E8E R			mov alarm_on,al
+					
+ 0998  E8 0071				call AlarmNow
+ 099B  B9 001E				mov cx,30
+ 099E				bigloop:
+ 099E  8B C1				mov ax,cx
+ 09A0  B3 02				mov bl,2
+ 09A2  F6 F3				div bl
+ 09A4  80 FC 01				cmp ah,1
+ 09A7  74 02				jz pic1
+ 09A9  EB 0A				jmp pic2
+ 09AB				pic1:
+ 09AB  BD ---- R			mov bp,seg HelloKitty
+ 09AE  8E C5				mov es,bp
+ 09B0  BD 02CE R			mov bp,offset HelloKitty	
+ 09B3  EB 0A				jmp showpic
+					
+ 09B5				pic2:	
+ 09B5  BD ---- R			mov bp,seg HelloKitty2
+ 09B8  8E C5				mov es,bp
+ 09BA  BD 0B57 R			mov bp,offset HelloKitty2
+ 09BD  EB 00				jmp showpic
+							
+ 09BF				showpic:
+ 09BF  51				push cx
+ 09C0  B9 000B				mov cx,11
+ 09C3  B7 00				mov bh,0
+ 09C5  8A 26 0424 R			mov ah,hellok_row
+ 09C9  50				push ax
+ 09CA				Kitty2:
+ 09CA  51				push cx
+ 09CB  B9 001F				mov cx,len_hellok
+ 09CE  8A 36 0424 R			mov dh,hellok_row
+ 09D2  8A 16 0423 R			mov dl,hellok_column
+ 09D6  B3 0F				mov bl,0fh
+ 09D8  B0 01				mov al,1
+ 09DA  B4 13				mov ah,13h
+ 09DC  CD 10				int 10h
+ 09DE  FE C6				inc dh
+ 09E0  88 36 0424 R			mov hellok_row,dh
+ 09E4  83 C5 1F				add bp,1fh
+ 09E7  59				pop cx
+ 09E8  E2 E0			loop Kitty2
+ 09EA  58			    pop ax
+ 09EB  88 26 0424 R		    mov hellok_row,ah	;恢复原坐标
+				    
+ 09EF				alarm_now:
+ 09EF  B9 EA60				mov cx,60000
+ 09F2  E8 0008				call waitf
+					
+ 09F5  59				pop cx
+ 09F6  E2 A6			loop bigloop
+
+ 09F8				finish_alarming:
+ 09F8  5A				pop dx
+ 09F9  59				pop cx
+ 09FA  5B				pop bx
+ 09FB  58				pop ax
+ 09FC  CF				iret
+					
+ 09FD				waitf proc near	;这个是照课本391页抄的
+ 09FD  50				push ax
+ 09FE				waitf1:
+ 09FE  E4 61				in  al,61h
+ 0A00  24 10				and al,10h
+ 0A02  38 E0				cmp al,ah
+ 0A04  74 F8				je  waitf1
+ 0A06  8A E0				mov ah,al
+ 0A08  E2 F4				loop waitf1
+ 0A0A  58				pop ax
+ 0A0B  C3				ret
+ 0A0C				waitf endp
+
+ 0A0C				AlarmNow proc near
+ 0A0C  50				push ax
+ 0A0D  53				push bx
+ 0A0E  51				push cx
+ 0A0F  52				push dx
+ 0A10  B9 000C				mov cx,12
+ 0A13  BD ---- R			mov bp,seg alarming
+ 0A16  8E C5				mov es,bp
+ 0A18  BD 0CAC R			mov bp,offset alarming
+ 0A1B  8A 26 0606 R			mov ah,manu_row
+ 0A1F  50				push ax
+					
+ 0A20				loop5:
+ 0A20  51				push cx
+ 0A21  B9 0028				mov cx,len_manu
+ 0A24  B3 0C				mov	bl,0ch
+ 0A26  B7 00				mov	bh,0
+ 0A28  8A 36 0606 R			mov dh,manu_row
+ 0A2C  8A 16 0605 R			mov dl,manu_column
+ 0A30  B0 01				mov al,1
+ 0A32  B4 13				mov ah,13h
+ 0A34  CD 10				int 10h
+ 0A36  FE C6				inc dh
+ 0A38  88 36 0606 R			mov manu_row,dh
+ 0A3C  83 C5 28				add bp,40
+ 0A3F  59				pop cx
+ 0A40  E2 DE			loop loop5
+					
+ 0A42  B7 00				mov bh,0
+ 0A44  8A 16 0607 R			mov dl,enter_column
+ 0A48  8A 36 0608 R			mov dh,enter_row
+ 0A4C  B4 02				mov ah,2h		;置光标
+ 0A4E  CD 10				int 10h
+ 0A50  58				pop ax
+ 0A51  88 26 0606 R			mov manu_row,ah	;恢复原坐标
+ 0A55  5A				pop dx
+ 0A56  59				pop cx
+ 0A57  5B				pop bx
+ 0A58  58				pop ax
+ 0A59  C3				ret
+ 0A5A				AlarmNow endp
+
+ 0A5A				hellokitty_alarm endp
+				;hellokitty_alarm完---------
+
+ 0A5A				CODES ENDS
+				    END START
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/12/11 09:53:19
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0A5A	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 16C5	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0064	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+AlarmNow . . . . . . . . . . . .	P Near	 0A0C	  CODES	Length= 004E Public
+  loop5  . . . . . . . . . . . .	L Near	 0A20	  CODES	
+clear  . . . . . . . . . . . . .	P Far	 035C	  CODES	Length= 0022 Public
+fcount . . . . . . . . . . . . .	P Far	 01D1	  CODES	Length= 00D2 Public
+  big_loop . . . . . . . . . . .	L Near	 01E2	  CODES	
+  little_loop  . . . . . . . . .	L Near	 022C	  CODES	
+  pause  . . . . . . . . . . . .	L Near	 0261	  CODES	
+  pre_timeup . . . . . . . . . .	L Near	 028B	  CODES	
+  timeup . . . . . . . . . . . .	L Near	 0291	  CODES	
+getHMS . . . . . . . . . . . . .	P Far	 078F	  CODES	Length= 0051 Public
+  gethour  . . . . . . . . . . .	L Near	 078F	  CODES	
+  getmin . . . . . . . . . . . .	L Near	 07AB	  CODES	
+  getsec . . . . . . . . . . . .	L Near	 07C7	  CODES	
+getcountnum  . . . . . . . . . .	P Far	 02A3	  CODES	Length= 006B Public
+hellokitty_alarm . . . . . . . .	P Far	 098F	  CODES	Length= 00CB Public
+  bigloop  . . . . . . . . . . .	L Near	 099E	  CODES	
+  pic1 . . . . . . . . . . . . .	L Near	 09AB	  CODES	
+  pic2 . . . . . . . . . . . . .	L Near	 09B5	  CODES	
+  showpic  . . . . . . . . . . .	L Near	 09BF	  CODES	
+  Kitty2 . . . . . . . . . . . .	L Near	 09CA	  CODES	
+  alarm_now  . . . . . . . . . .	L Near	 09EF	  CODES	
+  finish_alarming  . . . . . . .	L Near	 09F8	  CODES	
+numberProcessor  . . . . . . . .	P Far	 0787	  CODES	Length= 0008 Public
+onAlarm  . . . . . . . . . . . .	P Far	 05F6	  CODES	Length= 0020 Public
+printDate  . . . . . . . . . . .	P Far	 063E	  CODES	Length= 0116 Public
+  dayzero  . . . . . . . . . . .	L Near	 06DF	  CODES	
+  dayone . . . . . . . . . . . .	L Near	 06EC	  CODES	
+  daytwo . . . . . . . . . . . .	L Near	 06F9	  CODES	
+  daythree . . . . . . . . . . .	L Near	 0706	  CODES	
+  dayfour  . . . . . . . . . . .	L Near	 0713	  CODES	
+  dayfive  . . . . . . . . . . .	L Near	 0720	  CODES	
+  daysix . . . . . . . . . . . .	L Near	 072D	  CODES	
+  finish . . . . . . . . . . . .	L Near	 073A	  CODES	
+printIt  . . . . . . . . . . . .	P Far	 0754	  CODES	Length= 0026 Public
+printWord  . . . . . . . . . . .	P Far	 0616	  CODES	Length= 0028 Public
+print_help . . . . . . . . . . .	P Far	 090A	  CODES	Length= 0085 Public
+  abouti . . . . . . . . . . . .	L Near	 0920	  CODES	
+  help_loop  . . . . . . . . . .	L Near	 0955	  CODES	
+setAlarm . . . . . . . . . . . .	P Far	 05A0	  CODES	Length= 0056 Public
+setCursor  . . . . . . . . . . .	P Far	 077A	  CODES	Length= 000D Public
+showAlarm  . . . . . . . . . . .	P Far	 0552	  CODES	Length= 004E Public
+  showAlarm_loop . . . . . . . .	L Near	 0566	  CODES	
+showCountd . . . . . . . . . . .	P Far	 030E	  CODES	Length= 004E Public
+  loop_showCountd  . . . . . . .	L Near	 0322	  CODES	
+showKitty  . . . . . . . . . . .	P Far	 04C4	  CODES	Length= 0040 Public
+  Kitty  . . . . . . . . . . . .	L Near	 04DA	  CODES	
+showManu . . . . . . . . . . . .	P Far	 0504	  CODES	Length= 004E Public
+  manu_loop  . . . . . . . . . .	L Near	 0518	  CODES	
+showNumber . . . . . . . . . . .	P Far	 07E0	  CODES	Length= 00DE Public
+  showZero . . . . . . . . . . .	L Near	 081B	  CODES	
+  showOne  . . . . . . . . . . .	L Near	 0825	  CODES	
+  showTwo  . . . . . . . . . . .	L Near	 082F	  CODES	
+  showThree  . . . . . . . . . .	L Near	 0839	  CODES	
+  showFour . . . . . . . . . . .	L Near	 0843	  CODES	
+  showFive . . . . . . . . . . .	L Near	 084D	  CODES	
+  showSix  . . . . . . . . . . .	L Near	 0857	  CODES	
+  showSeven  . . . . . . . . . .	L Near	 0861	  CODES	
+  showEight  . . . . . . . . . .	L Near	 086B	  CODES	
+  showNine . . . . . . . . . . .	L Near	 0875	  CODES	
+  printNumber  . . . . . . . . .	L Near	 087F	  CODES	
+  showNumberExit . . . . . . . .	L Near	 08A2	  CODES	
+showWorld  . . . . . . . . . . .	P Far	 0476	  CODES	Length= 004E Public
+  loop_showWorld . . . . . . . .	L Near	 048A	  CODES	
+showdots . . . . . . . . . . . .	P Far	 08BE	  CODES	Length= 004C Public
+  printDots  . . . . . . . . . .	L Near	 08CD	  CODES	
+time_processor . . . . . . . . .	P Far	 037E	  CODES	Length= 0025 Public
+  over_24  . . . . . . . . . . .	L Near	 0395	  CODES	
+  below_0  . . . . . . . . . . .	L Near	 039A	  CODES	
+  finish_tpro  . . . . . . . . .	L Near	 039F	  CODES	
+waitf  . . . . . . . . . . . . .	P Near	 09FD	  CODES	Length= 000F Public
+  waitf1 . . . . . . . . . . . .	L Near	 09FE	  CODES	
+walking_clock  . . . . . . . . .	P Far	 03A3	  CODES	Length= 0058 Public
+  clock  . . . . . . . . . . . .	L Near	 03A7	  CODES	
+  newClock . . . . . . . . . . .	L Near	 03DF	  CODES	
+where_time . . . . . . . . . . .	P Far	 03FB	  CODES	Length= 01CD Public
+  is_beijing . . . . . . . . . .	L Near	 0428	  CODES	
+  is_tokyo . . . . . . . . . . .	L Near	 0439	  CODES	
+  is_paris . . . . . . . . . . .	L Near	 0446	  CODES	
+  is_ny  . . . . . . . . . . . .	L Near	 0453	  CODES	
+  is_london  . . . . . . . . . .	L Near	 0460	  CODES	
+  finish_where . . . . . . . . .	L Near	 046D	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+Beijing_clock  . . . . . . . . .	L Near	 0022	  CODES	
+HelloKitty2  . . . . . . . . . .	Byte	 0B57	  DATAS	
+HelloKitty . . . . . . . . . . .	Byte	 02CE	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+about_info . . . . . . . . . . .	Byte	 0822	  DATAS	
+alarm1 . . . . . . . . . . . . .	L Near	 0162	  CODES	
+alarm2 . . . . . . . . . . . . .	L Near	 0168	  CODES	
+alarm_clock  . . . . . . . . . .	L Near	 00E8	  CODES	
+alarm_hour . . . . . . . . . . .	Byte	 0E8C	  DATAS	
+alarm_min  . . . . . . . . . . .	Byte	 0E8D	  DATAS	
+alarm_on . . . . . . . . . . . .	Byte	 0E8E	  DATAS	
+alarm_screen . . . . . . . . . .	Byte	 0EB6	  DATAS	
+alarming . . . . . . . . . . . .	Byte	 0CAC	  DATAS	
+all_sub  . . . . . . . . . . . .	Byte	 07FD	  DATAS	
+buff . . . . . . . . . . . . . .	Byte	 12C6	  DATAS	
+c_column . . . . . . . . . . . .	Byte	 0293	  DATAS	
+c_row  . . . . . . . . . . . . .	Byte	 0294	  DATAS	
+clear_screen . . . . . . . . . .	Byte	 132A	  DATAS	
+column . . . . . . . . . . . . .	Byte	 028A	  DATAS	
+count1 . . . . . . . . . . . . .	Byte	 127A	  DATAS	
+count2 . . . . . . . . . . . . .	Byte	 127B	  DATAS	
+count3 . . . . . . . . . . . . .	Byte	 127C	  DATAS	
+countScreen  . . . . . . . . . .	Byte	 1096	  DATAS	
+count_column . . . . . . . . . .	Byte	 1276	  DATAS	
+count_row  . . . . . . . . . . .	Byte	 1277	  DATAS	
+countdown2 . . . . . . . . . . .	L Near	 018D	  CODES	
+countdown  . . . . . . . . . . .	L Near	 0179	  CODES	
+countnum . . . . . . . . . . . .	Word	 1278	  DATAS	
+day0 . . . . . . . . . . . . . .	Byte	 02C7	  DATAS	
+day1 . . . . . . . . . . . . . .	Byte	 0295	  DATAS	
+day2 . . . . . . . . . . . . . .	Byte	 029C	  DATAS	
+day3 . . . . . . . . . . . . . .	Byte	 02A4	  DATAS	
+day4 . . . . . . . . . . . . . .	Byte	 02AE	  DATAS	
+day5 . . . . . . . . . . . . . .	Byte	 02B7	  DATAS	
+day6 . . . . . . . . . . . . . .	Byte	 02BE	  DATAS	
+day  . . . . . . . . . . . . . .	Byte	 0291	  DATAS	
+dif_london . . . . . . . . . . .	Byte	 07FF	  DATAS	
+dif_ny . . . . . . . . . . . . .	Byte	 0800	  DATAS	
+dif_paris  . . . . . . . . . . .	Byte	 0801	  DATAS	
+dif_tokyo  . . . . . . . . . . .	Byte	 07FE	  DATAS	
+dots . . . . . . . . . . . . . .	Byte	 0230	  DATAS	
+eightconst . . . . . . . . . . .	Byte	 028D	  DATAS	
+eight  . . . . . . . . . . . . .	Byte	 01C0	  DATAS	
+enter_column . . . . . . . . . .	Byte	 0607	  DATAS	
+enter_row  . . . . . . . . . . .	Byte	 0608	  DATAS	
+exit . . . . . . . . . . . . . .	L Near	 01C5	  CODES	
+five . . . . . . . . . . . . . .	Byte	 0118	  DATAS	
+four . . . . . . . . . . . . . .	Byte	 00E0	  DATAS	
+functionList . . . . . . . . . .	L Near	 002C	  CODES	
+get_func . . . . . . . . . . . .	L Near	 003E	  CODES	
+get_wfunc  . . . . . . . . . . .	L Near	 0081	  CODES	
+have_alarm . . . . . . . . . . .	L Near	 00FE	  CODES	
+hellok_column  . . . . . . . . .	Byte	 0423	  DATAS	
+hellok_row . . . . . . . . . . .	Byte	 0424	  DATAS	
+help_info  . . . . . . . . . . .	Byte	 0977	  DATAS	
+help . . . . . . . . . . . . . .	L Near	 01AE	  CODES	
+hour_column  . . . . . . . . . .	Byte	 0E8F	  DATAS	
+hour_row . . . . . . . . . . . .	Byte	 0E91	  DATAS	
+isup . . . . . . . . . . . . . .	Byte	 127D	  DATAS	
+len_hellok . . . . . . . . . . .	Number	 001Fh	 
+len_line . . . . . . . . . . . .	Number	 0008h	 
+len_manu . . . . . . . . . . . .	Number	 0028h	 
+len_string . . . . . . . . . . .	Number	 001Fh	 
+london_clock . . . . . . . . . .	L Near	 00C1	  CODES	
+loop1  . . . . . . . . . . . . .	L Near	 0154	  CODES	
+manu_column  . . . . . . . . . .	Byte	 0605	  DATAS	
+manu_row . . . . . . . . . . . .	Byte	 0606	  DATAS	
+manu . . . . . . . . . . . . . .	Byte	 0425	  DATAS	
+mess1  . . . . . . . . . . . . .	Byte	 0609	  DATAS	
+min_column . . . . . . . . . . .	Byte	 0E90	  DATAS	
+month  . . . . . . . . . . . . .	Byte	 0290	  DATAS	
+name_beijing . . . . . . . . . .	Byte	 0803	  DATAS	
+name_london  . . . . . . . . . .	Byte	 080F	  DATAS	
+name_ny  . . . . . . . . . . . .	Byte	 0815	  DATAS	
+name_paris . . . . . . . . . . .	Byte	 081D	  DATAS	
+name_tokyo . . . . . . . . . . .	Byte	 080A	  DATAS	
+nine . . . . . . . . . . . . . .	Byte	 01F8	  DATAS	
+ny_clock . . . . . . . . . . . .	L Near	 00CE	  CODES	
+on_column  . . . . . . . . . . .	Byte	 0E92	  DATAS	
+on_row . . . . . . . . . . . . .	Byte	 0E93	  DATAS	
+one  . . . . . . . . . . . . . .	Byte	 0038	  DATAS	
+paris_clock  . . . . . . . . . .	L Near	 00DB	  CODES	
+read_func  . . . . . . . . . . .	L Near	 0042	  CODES	
+read_wfunc . . . . . . . . . . .	L Near	 0085	  CODES	
+room . . . . . . . . . . . . . .	Word	 0000	  STACKS	
+row  . . . . . . . . . . . . . .	Byte	 028B	  DATAS	
+seven  . . . . . . . . . . . . .	Byte	 0188	  DATAS	
+six  . . . . . . . . . . . . . .	Byte	 0150	  DATAS	
+string1  . . . . . . . . . . . .	Byte	 0268	  DATAS	
+string22 . . . . . . . . . . . .	Byte	 0EA1	  DATAS	
+string2  . . . . . . . . . . . .	Byte	 0E94	  DATAS	
+string4  . . . . . . . . . . . .	Byte	 127E	  DATAS	
+string5  . . . . . . . . . . . .	Byte	 1296	  DATAS	
+string7  . . . . . . . . . . . .	Byte	 12AE	  DATAS	
+string_column  . . . . . . . . .	Byte	 0288	  DATAS	
+string_row . . . . . . . . . . .	Byte	 0289	  DATAS	
+temp . . . . . . . . . . . . . .	Byte	 028C	  DATAS	
+three  . . . . . . . . . . . . .	Byte	 00A8	  DATAS	
+tokyo_clock  . . . . . . . . . .	L Near	 00B4	  CODES	
+two  . . . . . . . . . . . . . .	Byte	 0070	  DATAS	
+w_time . . . . . . . . . . . . .	L Near	 007D	  CODES	
+weekday  . . . . . . . . . . . .	Byte	 0292	  DATAS	
+what_time  . . . . . . . . . . .	Byte	 0802	  DATAS	
+world_time . . . . . . . . . . .	Byte	 061D	  DATAS	
+year . . . . . . . . . . . . . .	Word	 028E	  DATAS	
+zero . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+
+	   0 Warnings
+	   0 Errors
